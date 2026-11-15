@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu Carrinho | Once Upon a Bite</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="carrinho.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" href="images/msbiscuits-favicon.png">
+    <script src="carrinho.js" defer></script>
+</head>
+
+<body>
+    <header class="cabecalho">
+
+        <div class="logo">
+            <a href="index.html">
+                <img class="logo-cookie" src="images/msbiscuits.png" alt="Once Upon a Bite">
+            </a>
+        </div>
+
+        <label class="switch">
+            <input type="checkbox" id="botao-mode">
+            <span class="slider"></span>
+        </label>
+
+    </header>
+
+    <main class="pagina-carrinho">
+
+        <section class="topo-carrinho">
+
+            <span class="etiqueta-carrinho">SUA SELEÇÃO ESPECIAL</span>
+
+            <h1>Meu carrinho</h1>
+
+            <p>Seus cookies favoritos estão esperando por você!</p>
+
+        </section>
+
+        <section id="carrinhoVazio" class="carrinho-vazio">
+
+            <div class="icone-carrinho-vazio">🛒</div>
+
+            <h2>Seu carrinho está vazio</h2>
+
+            <p>
+                Parece que você ainda não escolheu seus cookies.
+                Que tal dar uma olhadinha no nosso cardápio?
+            </p>
+
+            <a href="index.html" class="botao-continuar">
+                Explorar cookies
+            </a>
+
+        </section>
+
+        <section id="carrinhoConteudo" class="lista-produtos">
+
+            <div class="carrinho-lista">
+
+                <div class="titulo-lista">
+
+                    <h2>Seus produtos</h2>
+
+                    <span id="contadorItensCarrinho">0 itens</span>
+
+                </div>
+
+                <div id="carrinhoItens">
+                </div>
+
+                <a href="index.html" class="continuar-comprando">
+                    ← Continuar comprando
+                </a>
+
+            </div>
+
+            <aside class="resumo-carrinho">
+
+                <div class="resumo-cabecalho">
+
+                    <span>QUASE LÁ!</span>
+
+                    <h2>Resumo do pedido</h2>
+
+                </div>
+
+
+                <div class="linha-resumo">
+                    <span>Subtotal</span>
+                    <span id="subtotalCarrinho">R$ 0,00</span>
+                </div>
+
+                <div class="linha-resumo">
+                    <span>Entrega</span>
+                    <span id="entregaCarrinho">A combinar</span>
+                </div>
+
+
+                <div class="divisor-resumo"></div>
+
+
+                <div class="linha-resumo total">
+                    <strong>Total</strong>
+                    <strong id="totalCarrinho">R$ 0,00</strong>
+                </div>
+
+
+                <button id="finalizarCompra" class="botao-finalizar" type="button" id="exportarPedido"
+                    class="botao-finalizar">>
+                    Finalizar pedido
+                    <span>→</span>
+                </button>
+
+
+                <div class="mensagem-resumo">
+                    <span>✦</span>
+                    <p>Preparado com carinho e açúcar!</p>
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape-carrinho">
+
+        <p>© 2026 Once Upon a Bite</p>
+
+        <span>Feito com carinho e açúcar.</span>
+
+    </footer>
+
+</body>
+
+</html>

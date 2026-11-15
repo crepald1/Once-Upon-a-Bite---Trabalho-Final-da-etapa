@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Once Upon a Bite | Cookies que contam histórias</title>
+    <link rel="stylesheet" href="halloween.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <script src="halloween.js" defer></script>
+
+    <link rel="icon" href="images/msbiscuits-favicon.png">
+</head>
+
+<body>
+
+    <!-- MASCOTE -->
+    <div id="mascote">
+        <div class="balao-oi">Oi! Clica em mim</div>
+        <img src="images/msbiscuitshalloween.png" alt="Cookie">
+    </div>
+
+    <!-- CHATBOT -->
+    <div id="chat">
+        <div class="topo">
+            <img src="images/msbiscuitshalloween.png" alt="Cookie">
+
+            <div class="nome">
+                <strong>Cookie</strong>
+                <span>online agora</span>
+            </div>
+
+            <button id="fechar" type="button">✕</button>
+        </div>
+
+        <div id="mensagens"></div>
+
+        <div class="rodape">
+            <input id="texto" type="text" placeholder="Escreve sua pergunta...">
+            <button id="enviar" type="button">➤</button>
+        </div>
+    </div>
+
+    <!-- INTRODUÇÃO DE HALLOWEEN -->
+    <div class="intro-halloween" id="intro-halloween" aria-label="Abertura de Halloween">
+
+        <div class="intro-raios" aria-hidden="true"></div>
+
+        <video
+            class="intro-abobora"
+            id="intro-abobora"
+            src="images/abobora-halloween.mp4"
+            autoplay
+            playsinline
+            preload="auto"
+            aria-label="Animação macabra de uma abóbora">
+        </video>
+
+        <button class="intro-pular" id="intro-pular" type="button">
+            Pular introdução ✕
+        </button>
+    </div>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <a class="logo" href="#inicio">
+            <span class="logo-cookie">
+                <img src="images/msbiscuitshalloween.png" alt="">
+            </span>
+
+            <span>
+                Once Upon
+                <small>a Bite</small>
+            </span>
+        </a>
+
+        <nav class="menu">
+
+            <a href="index.html">Início</a>
+
+            <div class="feriados">
+                <p class="header-active">Feriados</p>
+
+                <ul class="dropdown-feriados">
+                    <li>
+                        <a class="header-active" href="halloween.html">Halloween</a>
+                    </li>
+
+                    <li>
+                        <a href="natal.html">Natal</a>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="tematicos.html">Temáticos</a>
+
+            <a href="carrinho.html" id="iconeCarrinho">
+                🛒
+                <span id="contadorCarrinho">0</span>
+            </a>
+
+            <div class="pesquisa">
+                <input
+                    type="search"
+                    id="campoPesquisa"
+                    list="lista-cookies"
+                    placeholder="Buscar cookie..."
+                    autocomplete="off"
+                >
+
+                <datalist id="lista-cookies">
+                    <option value="Papai Cruel">
+                    <option value="Poção Proibida">
+                    <option value="Maldição da abóbora">
+                    <option value="Jason Voorhees">
+                    <option value="Mordida Proibida">
+                    <option value="Ossos do Ofício">
+                    <option value="Frankestein">
+                    <option value="Gato Preto">
+                    <option value="Dark Side">
+                    <option value="Pink Dream">
+                    <option value="Floresta Mágica">
+                    <option value="I AM IRON MAN">
+                    <option value="Velociraptor">
+                    <option value="Amor Encantado">
+                    <option value="HEHE">
+                    <option value="SuperSonic">
+                    <option value="Intergalático">
+                    <option value="Troca Equivalente">
+                    <option value="Aquele em que Mônica">
+                    <option value="O Roubo">
+                    <option value="Gingerbread">
+                    <option value="Hello Kitty Natalina">
+                    <option value="Grinch">
+                    <option value="HOHOHO">
+                    <option value="Let it go">
+                    <option value="Presentes">
+                    <option value="Rudolph">
+                    <option value="Mamãe Noel">
+                </datalist>
+
+                <button type="button" onclick="abrirPesquisa()" aria-label="Pesquisar">
+                    <img src="images/lupa.png" alt="">
+                </button>
+            </div>
+
+            <button type="button" class="botao-abrir-login" onclick="abrirLogin()">Login</button>
+
+            <div id="id01" class="modal">
+                <div class="modal-content">
+
+                    <button type="button" class="close" onclick="fecharLogin()">&times;</button>
+
+                    <div class="login-decoracao">
+                        <img src="images/msbiscuits.png" alt="Cookie">
+
+                        <span class="login-detalhe">✦ UMA EXPERIÊNCIA ESPECIAL ✦</span>
+
+                        <h2>Once Upon<br>a Bite</h2>
+
+                        <p>Toda grande história começa com uma mordida. Que tal continuar a sua?</p>
+
+                        <span class="login-estrela">✧</span>
+                    </div>
+
+                    <div class="login-formulario">
+                        <span class="login-boasvindas">É BOM TER VOCÊ AQUI!</span>
+
+                        <h2>Bem-vindo!</h2>
+
+                        <p class="subtitulo">
+                            Entre na sua conta e descubra seu próximo sabor favorito.
+                        </p>
+
+                        <form id="formLogin">
+                            <label for="uname">E-mail</label>
+
+                            <input
+                                type="email"
+                                id="uname"
+                                name="email"
+                                placeholder="Digite seu e-mail"
+                                required
+                            >
+
+                            <label for="psw">Senha</label>
+
+                            <input
+                                type="password"
+                                id="psw"
+                                name="senha"
+                                placeholder="Digite sua senha"
+                                required
+                            >
+
+                            <div class="login-opcoes">
+                                <label class="lembrar">
+                                    <input type="checkbox" name="remember">
+                                    Lembrar de mim
+                                </label>
+
+                                <a href="#">Esqueceu a senha?</a>
+                            </div>
+
+                            <button type="submit" class="botao-login">
+                                Entrar na minha conta <span>→</span>
+                            </button>
+                        </form>
+
+                        <p class="login-cadastro">
+                            Ainda não tem uma conta?
+                            <a href="#">Cadastre-se</a>
+                        </p>
+
+                        <div class="login-rodape">
+                            ✦ EVERY BITE TELLS A STORY ✦
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODO CLARO E ESCURO -->
+            <label class="switch">
+                <input type="checkbox" id="botao-mode">
+                <span class="slider"></span>
+            </label>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- DESTAQUE -->
+        <section class="destaque" id="inicio">
+
+            <div class="destaque-texto">
+                <p class="sobretitulo">
+                    EDIÇÃO ESPECIAL • OUTUBRO
+                </p>
+
+                <h1>
+                    Um Halloween<br>
+                    de dar água na boca.
+                </h1>
+
+                <p class="descricao">
+                    Cookies misteriosos, recheios deliciosos e um pouquinho de magia.
+                    Descubra os sabores especiais que preparamos para essa temporada.
+                </p>
+            </div>
+
+            <div class="destaque-foto">
+                <div class="foto-placeholder halloween-foto">
+                    <img
+                        src="images/halloweenpag1.png"
+                        alt="Cookies especiais de Halloween">
+                </div>
+
+                <span class="selo">
+                    EDIÇÃO<br>
+                    LIMITADA
+                </span>
+            </div>
+        </section>
+
+        <!-- PRIMEIRA SEÇÃO DE PRODUTOS -->
+        <section class="secao produtos" id="tematicos">
+
+            <div class="titulo-secao">
+                <div>
+                    <p class="sobretitulo">
+                        ESCOLHA SEU UNIVERSO
+                    </p>
+
+                    <h2>
+                        Cookies Assustadoramente bonitos
+                    </h2>
+                </div>
+
+                <p class="texto-apoio">
+                    Qual susto você quer levar?
+                </p>
+            </div>
+
+            <div class="grade-produtos" id="produtos">
+
+                <!-- PAPAI CRUEL -->
+                <article class="produto">
+                    <div class="foto-placeholder foto-produto">
+                        <img
+                            src="images/halloweencookie1.png"
+                            alt="Papai Cruel"
+                            class="imagem-detalhes"
+                            onclick="abrirDetalhes(this)"
+                            data-id="1"
+                            data-nome="Papai Cruel"
+                            data-preco="8.00"
+                            data-imagem="images/halloweencookie1.png"
+                            data-descricao="Chocolate amargo com gotas de chocolate branco. Sombrio por fora, irresistível por dentro."
+                            data-ingredientes="Massa de chocolate amargo e gotas de chocolate branco."
+                            data-informacoes="Cookie especial da coleção de Halloween."
+                            data-categoria="HALLOWEEN"
+                        >
+                    </div>
+
+                    <div class="produto-info">
+                        <p class="categoria">HALLOWEEN</p>
+                        <h3>Papai Cruel</h3>
+
+                        <p>
+                            Chocolate amargo com gotas de chocolate branco.
+                            Sombrio por fora, irresistível por dentro.
+                        </p>
+
+                        <div class="produto-final">
+                            <strong>R$ 8,00</strong>
+
+                            <button
+                                type="button"
+                                class="adicionar-carrinho"
+                                onclick="adicionarAoCarrinho(this)"
+                                data-nome="Papai Cruel"
+                                data-preco="8.00"
+                                aria-label="Adicionar Papai Cruel ao carrinho"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- POÇÃO PROIBIDA -->
+                <article class="produto">
+                    <div class="foto-placeholder foto-produto">
+                        <img
+                            src="images/halloweencookie2.png"
+                            alt="Poção Proibida"
+                            class="imagem-detalhes"
+                            onclick="abrirDetalhes(this)"
+                            data-id="2"
+                            data-nome="Poção Proibida"
+                            data-preco="8.50"
+                            data-imagem="images/halloweencookie2.png"
+                            data-descricao="Cookie de Red Velvet roxo com recheio de chocolate branco."
+                            data-ingredientes="Massa de Red Velvet e recheio de chocolate branco."
+                            data-informacoes="Cookie especial da coleção de Halloween."
+                            data-categoria="HALLOWEEN"
+                        >
+                    </div>
+
+                    <div class="produto-info">
+                        <p class="categoria">HALLOWEEN</p>
+                        <h3>Poção Proibida</h3>
+
+                        <p>
+                            Cookie de Red Velvet roxo com recheio de chocolate branco.
+                        </p>
+
+                        <div class="produto-final">
+                            <strong>R$ 8,50</strong>
+
+                            <button
+                                type="button"
+                                class="adicionar-carrinho"
+                                onclick="adicionarAoCarrinho(this)"
+                                data-nome="Poção Proibida"
+                                data-preco="8.50"
+                                aria-label="Adicionar Poção Proibida ao carrinho"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- MALDIÇÃO DA ABÓBORA -->
+                <article class="produto">
+                    <div class="foto-placeholder foto-produto">
+                        <img
+                            src="images/halloweencookie.3.png"
+                            alt="Maldição da Abóbora"
+                            class="imagem-detalhes"
+                            onclick="abrirDetalhes(this)"
+                            data-id="3"
+                            data-nome="Maldição da Abóbora"
+                            data-preco="9.00"
+                            data-imagem="images/halloweencookie.3.png"
+                            data-descricao="Cookie de especiarias com recheio de caramelo."
+                            data-ingredientes="Massa de especiarias e recheio de caramelo."
+                            data-informacoes="Cookie especial da coleção de Halloween."
+                            data-categoria="HALLOWEEN"
+                        >
+                    </div>
+
+                    <div class="produto-info">
+                        <p class="categoria">HALLOWEEN</p>
+                        <h3>Maldição da Abóbora</h3>
+
+                        <p>
+                            Cookie de especiarias com recheio de caramelo.
+                        </p>
+
+                        <div class="produto-final">
+                            <strong>R$ 9,00</strong>
+
+                            <button
+                                type="button"
+                                class="adicionar-carrinho"
+                                onclick="adicionarAoCarrinho(this)"
+                                data-nome="Maldição da Abóbora"
+                                data-preco="9.00"
+                                aria-label="Adicionar Maldição da Abóbora ao carrinho"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- JASON VOORHEES -->
+                <article class="produto">
+                    <div class="foto-placeholder foto-produto">
+                        <img
+                            src="images/halloweencookie4.png"
+                            alt="Jason Voorhees"
+                            class="imagem-detalhes"
+                            onclick="abrirDetalhes(this)"
+                            data-id="4"
+                            data-nome="Jason Voorhees"
+                            data-preco="7.00"
+                            data-imagem="images/halloweencookie4.png"
+                            data-descricao="Cookie de chocolate com caramelo salgado, ocasionalmente assustador."
+                            data-ingredientes="Massa de chocolate e recheio de caramelo salgado."
+                            data-informacoes="Cookie especial da coleção de Halloween."
+                            data-categoria="HALLOWEEN"
+                        >
+                    </div>
+
+                    <div class="produto-info">
+                        <p class="categoria">HALLOWEEN</p>
+                        <h3>Jason Voorhees</h3>
+
+                        <p>
+                            Cookie de chocolate com caramelo salgado,
+                            ocasionalmente assustador.
+                        </p>
+
+                        <div class="produto-final">
+                            <strong>R$ 7,00</strong>
+
+                            <button
+                                type="button"
+                                class="adicionar-carrinho"
+                                onclick="adicionarAoCarrinho(this)"
+                                data-nome="Jason Voorhees"
+                                data-preco="7.00"
+                                aria-label="Adicionar Jason Voorhees ao carrinho"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SEGUNDA SEÇÃO DE PRODUTOS -->
+        <section class="secao produtos" id="tematicos-2">
+
+            <div class="grade-produtos" id="produtos-2">
+
+                <!-- MORDIDA PROIBIDA -->
+                <article class="produto">
+                    <div class="foto-placeholder foto-produto">
+                        <img
+                            src="images/halloweencookie5.png"
+                            alt="Mordida Proibida"
+                            class="imagem-detalhes"
+                            onclick="abrirDetalhes(this)"
+                            data-id="5"
+                            data-nome="Mordida Proibida"
+                            data-preco="8.00"
+                            data-imagem="images/halloweencookie5.png"
+                            data-descricao="Cookie de chocolate meio amargo com recheio de frutas vermelhas, combinando chocolate intenso com um toque azedinho."
+                            data-ingredientes="Massa de chocolate meio amargo e recheio de frutas vermelhas."
+                            data-informacoes="Cookie especial da coleção de Halloween."
+                            data-categoria="HALLOWEEN"
+                        >
+                    </div>
+
+                    <div class="produto-info">
+                        <p class="categoria">HALLOWEEN</p>
+                        <h3>Mordida Proibida</h3>
+
+                        <p>
+                            Cookie de chocolate meio amargo com recheio de frutas vermelhas,
+                            trazendo uma combinação horripilante de chocolate intenso
+                            com um toque azedinho.
+                        </p>
+
+                        <div class="produto-final">
+                            <strong>R$ 8,00</strong>
+
+                            <button
+                                type="button"
+                                class="adicionar-carrinho"
+                                onclick="adicionarAoCarrinho(this)"
+                                data-nome="Mordida Proibida"
+                                data-preco="8.00"
+                                aria-label="Adicionar Mordida Proibida ao carrinho"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- OSSOS DO OFÍCIO -->
+                <article class="produto">
+                    <div class="foto-placeholder foto-produto">
+                        <img
+                            src="images/halloweencookie6.png"
+                            alt="Ossos do Ofício"
+                            class="imagem-detalhes"
+                            onclick="abrirDetalhes(this)"
+                            data-id="6"
+                            data-nome="Ossos do Ofício"
+                            data-preco="8.50"
+                            data-imagem="images/halloweencookie6.png"
+                            data-descricao="Cookie de chocolate com pedaços de doces em formato de ossos e recheio cremoso de brigadeiro de baunilha."
+                            data-ingredientes="Massa de chocolate, doces em formato de ossos e recheio de brigadeiro de baunilha."
+                            data-informacoes="Cookie especial da coleção de Halloween."
+                            data-categoria="HALLOWEEN"
+                        >
+                    </div>
+
+                    <div class="produto-info">
+                        <p class="categoria">HALLOWEEN</p>
+                        <h3>Ossos do Ofício</h3>
+
+                        <p>
+                            Cookie de chocolate com pedaços de doces em formato de ossos
+                            e recheio cremoso de brigadeiro de baunilha,
+                            perfeito para os amantes do horror.
+                        </p>
+
+                        <div class="produto-final">
+                            <strong>R$ 8,50</strong>
+
+                            <button
+                                type="button"
+                                class="adicionar-carrinho"
+                                onclick="adicionarAoCarrinho(this)"
+                                data-nome="Ossos do Ofício"
+                                data-preco="8.50"
+                                aria-label="Adicionar Ossos do Ofício ao carrinho"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- FRANKENSTEIN -->
+                <article class="produto">
+                    <div class="foto-placeholder foto-produto">
+                        <img
+                            src="images/halloweencookie7.png"
+                            alt="Frankenstein"
+                            class="imagem-detalhes"
+                            onclick="abrirDetalhes(this)"
+                            data-id="7"
+                            data-nome="Frankenstein"
+                            data-preco="9.00"
+                            data-imagem="images/halloweencookie7.png"
+                            data-descricao="Cookie de chocolate com recheio de pistache e enfeites de chocolate."
+                            data-ingredientes="Massa de chocolate, recheio de pistache e enfeites de chocolate."
+                            data-informacoes="Cookie especial da coleção de Halloween."
+                            data-categoria="HALLOWEEN"
+                        >
+                    </div>
+
+                    <div class="produto-info">
+                        <p class="categoria">HALLOWEEN</p>
+                        <h3>Frankenstein</h3>
+
+                        <p>
+                            Cookie de chocolate com recheio de pistache
+                            e enfeites de chocolate.
+                        </p>
+
+                        <div class="produto-final">
+                            <strong>R$ 9,00</strong>
+
+                            <button
+                                type="button"
+                                class="adicionar-carrinho"
+                                onclick="adicionarAoCarrinho(this)"
+                                data-nome="Frankenstein"
+                                data-preco="9.00"
+                                aria-label="Adicionar Frankenstein ao carrinho"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- GATO PRETO -->
+                <article class="produto">
+                    <div class="foto-placeholder foto-produto">
+                        <img
+                            src="images/halloweencookie8.png"
+                            alt="Gato Preto"
+                            class="imagem-detalhes"
+                            onclick="abrirDetalhes(this)"
+                            data-id="8"
+                            data-nome="Gato Preto"
+                            data-preco="7.00"
+                            data-imagem="images/halloweencookie8.png"
+                            data-descricao="Cookie de chocolate preto com olhos de chocolate laranja e recheio de avelã."
+                            data-ingredientes="Massa de chocolate, olhos de chocolate laranja e recheio de avelã."
+                            data-informacoes="Cookie especial da coleção de Halloween."
+                            data-categoria="HALLOWEEN"
+                        >
+                    </div>
+
+                    <div class="produto-info">
+                        <p class="categoria">HALLOWEEN</p>
+                        <h3>Gato Preto</h3>
+
+                        <p>
+                            Cookie de chocolate preto com olhos de chocolate laranja
+                            e recheio de avelã.
+                        </p>
+
+                        <div class="produto-final">
+                            <strong>R$ 7,00</strong>
+
+                            <button
+                                type="button"
+                                class="adicionar-carrinho"
+                                onclick="adicionarAoCarrinho(this)"
+                                data-nome="Gato Preto"
+                                data-preco="7.00"
+                                aria-label="Adicionar Gato Preto ao carrinho"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CONVITE -->
+        <section class="convite" id="carrinho">
+            <div>
+                <p class="sobretitulo">
+                    SUA PRÓXIMA HISTÓRIA COMEÇA AQUI
+                </p>
+
+                <h2>
+                    Qual vai ser a sua próxima mordida?
+                </h2>
+
+                <p>
+                    Escolha seus favoritos e monte sua caixinha de cookies.
+                </p>
+            </div>
+
+            <a class="botao botao-claro" href="carrinho.html">
+                Explorar os cookies <span>→</span>
+            </a>
+        </section>
+
+        <!-- CONTATO -->
+        <section class="secao contato" id="formulario">
+            <div class="titulo-secao">
+                <div>
+                    <p class="sobretitulo">
+                        VAMOS CONVERSAR?
+                    </p>
+
+                    <h2>Fale conosco!</h2>
+                </div>
+            </div>
+
+            <form class="form-contato">
+                <label for="nome">Seu nome</label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Como podemos te chamar?">
+
+                <label for="email">Seu e-mail</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="voce@email.com">
+
+                <label for="mensagem">Mensagem</label>
+
+                <textarea
+                    id="mensagem"
+                    name="mensagem"
+                    rows="4"
+                    placeholder="Escreva sua dúvida ou sugestão..."></textarea>
+
+                <button class="botao" type="submit">
+                    Enviar mensagem <span>→</span>
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+        <a class="logo logo-rodape" href="#inicio">
+            ✦ Once Upon a Bite
+        </a>
+
+        <p>Every bite tells a story.</p>
+
+        <small>
+            © 2026 Once Upon a Bite • Feito com carinho.
+        </small>
+    </footer>
+
+</body>
+</html>

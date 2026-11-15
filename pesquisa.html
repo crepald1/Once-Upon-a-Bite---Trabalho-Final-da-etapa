@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Once Upon a Bite | Cookies que contam histórias</title>
+  <link rel="stylesheet" href="pesquisa.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="tematicos.js" defer></script>
+  <link rel="icon" href="images/msbiscuits-favicon.png">
+</head>
+<body>
+  <div id="mascote">
+    <div class="balao-oi">Oi! Clica em mim</div>
+    <img src="images/msbiscuits.png" alt="Cookie">
+  </div>
+  
+  <div id="chat">
+    <div class="topo">
+      <img src="images/msbiscuitsheroi.png" alt="Cookie">
+      <div class="nome">
+        <strong>Cookie</strong>
+        <span>online agora</span>
+      </div>
+      <button id="fechar">✕</button>
+    </div>
+    <div id="mensagens"></div>
+    <div class="rodape">
+      <input id="texto" type="text" placeholder="Escreve sua pergunta...">
+      <button id="enviar">➤</button>
+    </div>
+  </div>
+
+  <header class="cabecalho">
+    <a class="logo" href="#inicio">
+      <span class="logo-cookie"><img src="images/msbiscuits.png" alt=""></span>
+      <span>Once Upon <small>a Bite</small></span>
+    </a>
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <div class="feriados">
+        <p>Feriados</p>
+        <ul class="dropdown-feriados">
+          <li><a href="halloween.html">Halloween</a></li>
+          <li><a href="#">Natal</a></li>
+          <li><a href="#">Ano Novo</a></li>
+        </ul>
+      </div>
+      <a href="tematicos.html">Temáticos</a>
+      <a href="carrinho.html">Carrinho</a>
+      <div class="login">
+        <a class="login" href="#">Login</a>
+        <div class="login-dropdown">
+          <label for="email-login">E-mail:</label>
+          <input type="text" id="email-login">
+          <label for="senha-login">Senha:</label>
+          <input type="password" id="senha-login">
+        </div>
+      </div>
+      <div class="pesquisa">
+        <a href="#"><img src="images/lupa.png" alt="Pesquisar"></a>
+        <div class="pesquisa-dropdown">
+          <input placeholder="Pesquisa" type="text">
+        </div>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="botao-mode">
+        <span class="slider"></span>
+      </label>
+    </nav>
+  </header>
+
+  <main>
+    <section class="secao produtos" id="tematicos">
+      <div class="titulo-secao">
+        <div>
+          <p class="sobretitulo">ESCOLHA SEU UNIVERSO</p>
+          <h2>Cookies sobre todos os Universos</h2>
+        </div>
+        <p class="texto-apoio">Qual universo você quer entrar?</p>
+      </div>
+
+      <div class="grade-produtos" id="produtos">
+        <article class="produto">
+          <div class="foto-placeholder foto-produto">
+            <img src="images/jurassic.png" alt="Cookie Velociraptor">
+          </div>
+          <div class="produto-info">
+            <p class="categoria">FILMES</p>
+            <h3>Cookie Velociraptor</h3>
+            <p>Pistache com brigadeiro preto e pedaços de chocoball</p>
+            <div class="produto-final">
+              <strong>R$ 8,00</strong>
+              <button type="button" aria-label="Adicionar ao carrinho">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="foto-placeholder foto-produto">
+            <img src="images/princesa.png" alt="Cookie Amor Encantado">
+          </div>
+          <div class="produto-info">
+            <p class="categoria">FILMES</p>
+            <h3>Cookie Amor encantado</h3>
+            <p>Cookie de Morango, com recheio de maracujá</p>
+            <div class="produto-final">
+              <strong>R$ 8,50</strong>
+              <button type="button" aria-label="Adicionar ao carrinho">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="foto-placeholder foto-produto">
+            <img src="images/micheal.png" alt="Cookie HEHE">
+          </div>
+          <div class="produto-info">
+            <p class="categoria">FILMES</p>
+            <h3>Cookie HEHE</h3>
+            <p>Cookie de leite condensado recheado com framboesa</p>
+            <div class="produto-final">
+              <strong>R$ 9,00</strong>
+              <button type="button" aria-label="Adicionar ao carrinho">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="foto-placeholder foto-produto">
+            <img src="images/sonic.png" alt="Cookie SuperSonic">
+          </div>
+          <div class="produto-info">
+            <p class="categoria">FILMES</p>
+            <h3>Cookie SuperSonic</h3>
+            <p>Cookie de blueberry com toques de baunilha</p>
+            <div class="produto-final">
+              <strong>R$ 6,70</strong>
+              <button type="button" aria-label="Adicionar ao carrinho">+</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="grade-produtos" id="produtos-2">
+        <article class="produto">
+          <div class="foto-placeholder foto-produto">
+            <img src="images/rickandmorty.png" alt="Cookie Intergalático">
+          </div>
+          <div class="produto-info">
+            <p class="categoria">SERIES</p>
+            <h3>Cookie Intergalático</h3>
+            <p>Cookie de passas ao rum com recheio de limão</p>
+            <div class="produto-final">
+              <strong>R$ 8,00</strong>
+              <button type="button" aria-label="Adicionar ao carrinho">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="foto-placeholder foto-produto">
+            <img src="images/FULLMETAL.png" alt="Cookie da Troca Equivalente">
+          </div>
+          <div class="produto-info">
+            <p class="categoria">SERIES</p>
+            <h3>Cookie da Troca Equivalente</h3>
+            <p>Cookie de maça com recheio de canela.</p>
+            <div class="produto-final">
+              <strong>R$ 8,50</strong>
+              <button type="button" aria-label="Adicionar ao carrinho">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="foto-placeholder foto-produto">
+            <img src="images/friends.png" alt="Cookie Aquele em que Monica">
+          </div>
+          <div class="produto-info">
+            <p class="categoria">SERIES</p>
+            <h3>Cookie Aquele em que Monica</h3>
+            <p>Cookie de banana com recheio de brigadeiro branco.</p>
+            <div class="produto-final">
+              <strong>R$ 9,00</strong>
+              <button type="button" aria-label="Adicionar ao carrinho">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="foto-placeholder foto-produto">
+            <img src="images/lacasa.png" alt="Cookie O roubo">
+          </div>
+          <div class="produto-info">
+            <p class="categoria">SERIES</p>
+            <h3>Cookie O roubo</h3>
+            <p>Cookie de Red Velvet recheado com ganache de chocolate rubi, coberto com folhas de ouro de 1 quilate</p>
+            <div class="produto-final">
+              <strong>R$ 20,00</strong>
+              <button type="button" aria-label="Adicionar ao carrinho">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="foto-placeholder foto-produto">
+            <img src="images/cookies.png" alt="Cookie Dark Side">
+          </div>
+          <div class="produto-info">
+            <p class="categoria">STAR WARS</p>
+            <h3>Cookie Dark Side</h3>
+            <p>Chocolate intenso para quem gosta do lado mais sombrio.</p>
+            <div class="produto-final">
+              <strong>R$ 8,00</strong>
+              <button type="button" aria-label="Adicionar Cookie Dark Side ao carrinho">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="foto-placeholder foto-produto">
+            <img src="images/cookies3.png" alt="Cookie Pink Dream">
+          </div>
+          <div class="produto-info">
+            <p class="categoria">BARBIE</p>
+            <h3>Cookie Pink Dream</h3>
+            <p>Um cookie delicado com chocolate branco e um toque de morango.</p>
+            <div class="produto-final">
+              <strong>R$ 8,50</strong>
+              <button type="button" aria-label="Adicionar Cookie Pink Dream ao carrinho">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="foto-placeholder foto-produto">
+            <img src="images/cookie2.png" alt="Cookie Floresta Mágica">
+          </div>
+          <div class="produto-info">
+            <p class="categoria">HARRY POTTER</p>
+            <h3>Cookie Floresta Mágica</h3>
+            <p>Baunilha com chocolate e decoração inspirada em contos de fadas.</p>
+            <div class="produto-final">
+              <strong>R$ 9,00</strong>
+              <button type="button" aria-label="Adicionar Cookie Floresta Mágica ao carrinho">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+         
+        </article>
+
+        <article class="produto">
+            <div class="foto-placeholder foto-produto">
+                <img src="images/halloweencookie2.png" alt="Cookie Pink Dream">
+            </div>
+            <div class="produto-info">
+                <p class="categoria">HALLOWEEN</p>
+                <h3>Cookie Poção Proibida</h3>
+                <p>Cookie de Red Velvet roxo com recheio de chocolate branco.</p>
+                <div class="produto-final">
+                    <strong>R$ 8,50</strong>
+                    <button type="button" aria-label="Adicionar Poção Proibida ao carrinho">+</button>
+                </div>
+            </div>
+          </article>
+  
+          <article class="produto">
+            <div class="foto-placeholder foto-produto">
+                <img src="images/halloweencookie1.png" alt="">
+            </div>
+            <div class="produto-info">
+                <p class="categoria">HALLOWEEN</p>
+                <h3>Cookie Papai Cruel</h3>
+                <p>Chocolate amargo com gotas de chocolate branco. Sombrio por fora, irresistivel por dentro.</p>
+                <div class="produto-final">
+                    <strong>R$ 8,00</strong>
+                    <button type="button" aria-label="Adicionar Cookie Papai Cruel ao carrinho">+</button>
+                </div>
+            </div>
+          </article>
+  
+          <article class="produto">
+            <div class="foto-placeholder foto-produto">
+                <img src="images/halloweencookie2.png" alt="Cookie Pink Dream">
+            </div>
+            <div class="produto-info">
+                <p class="categoria">HALLOWEEN</p>
+                <h3>Cookie Poção Proibida</h3>
+                <p>Cookie de Red Velvet roxo com recheio de chocolate branco.</p>
+                <div class="produto-final">
+                    <strong>R$ 8,50</strong>
+                    <button type="button" aria-label="Adicionar Poção Proibida ao carrinho">+</button>
+                </div>
+            </div>
+          </article>
+  
+          <article class="produto">
+            <div class="foto-placeholder foto-produto">
+                <img src="images/halloweencookie1.png" alt="">
+            </div>
+            <div class="produto-info">
+                <p class="categoria">HALLOWEEN</p>
+                <h3>Cookie Papai Cruel</h3>
+                <p>Chocolate amargo com gotas de chocolate branco. Sombrio por fora, irresistivel por dentro.</p>
+                <div class="produto-final">
+                    <strong>R$ 8,00</strong>
+                    <button type="button" aria-label="Adicionar Cookie Papai Cruel ao carrinho">+</button>
+                </div>
+            </div>
+          </article>
+        
+            
+
+
+

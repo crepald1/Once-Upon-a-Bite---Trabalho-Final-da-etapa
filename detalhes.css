@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #FFFDF9;
+    color: #3A2E2A;
+    min-height: 100vh;
+}
+
+.cabecalho {
+    width: 100%;
+    padding: 22px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #641E32;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: #f0dfc3;
+    text-decoration: none;
+}
+
+.cabecalho nav {
+    display: flex;
+    gap: 30px;
+}
+
+.cabecalho nav a {
+    color: #FFFDF9;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.cabecalho nav a:hover {
+    color: #B79A62;
+}
+
+.pagina-detalhes {
+    max-width: 1150px;
+    width: 90%;
+    margin: 45px auto 70px;
+}
+
+.voltar {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #641E32;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.voltar:hover {
+    color: #B79A62;
+}
+
+.produto-detalhe {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.imagem-container {
+    background-color: #f0dfc3;
+    border-radius: 22px;
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+}
+
+.imagem-container img {
+    width: 100%;
+    max-width: 420px;
+    max-height: 420px;
+    object-fit: contain;
+}
+
+.informacoes {
+    padding: 15px 0;
+}
+
+.categoria {
+    color: #B79A62;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.informacoes h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    color: #641E32;
+    margin: 12px 0;
+}
+
+.preco {
+    color: #3A2E2A;
+    font-size: 27px;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.descricao {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #75645d;
+}
+
+.linha {
+    height: 1px;
+    background-color: #e7d9c9;
+    margin: 25px 0;
+}
+
+.informacao-extra {
+    margin-bottom: 20px;
+}
+
+.informacao-extra h3 {
+    color: #641E32;
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    margin-bottom: 6px;
+}
+
+.informacao-extra p {
+    color: #75645d;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.quantidade {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 28px 0;
+    font-weight: 800;
+}
+
+.controle {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #f0dfc3;
+    border-radius: 30px;
+    padding: 7px 12px;
+}
+
+.controle button {
+    border: none;
+    background: none;
+    color: #641E32;
+    font-size: 22px;
+    font-weight: 800;
+    cursor: pointer;
+    width: 25px;
+}
+
+.controle span {
+    font-weight: 800;
+    min-width: 15px;
+    text-align: center;
+}
+
+.botao-carrinho {
+    width: 100%;
+    padding: 16px;
+    background-color: #641E32;
+    color: #FFFDF9;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-carrinho:hover {
+    background-color: #3A2E2A;
+    transform: translateY(-2px);
+}
+
+.mensagem {
+    margin-top: 12px;
+    color: #49734b;
+    font-weight: 700;
+    text-align: center;
+}
+
+footer {
+    background-color: #641E32;
+    color: #f0dfc3;
+    text-align: center;
+    padding: 22px;
+    font-size: 13px;
+}
+
+body.modo-escuro {
+    background-color: #211b1b;
+    color: #f0dfc3;
+}
+
+body.modo-escuro .informacoes h1,
+body.modo-escuro .informacao-extra h3,
+body.modo-escuro .voltar {
+    color: #e6c99a;
+}
+
+body.modo-escuro .descricao,
+body.modo-escuro .informacao-extra p {
+    color: #d0c1b5;
+}
+
+body.modo-escuro .preco {
+    color: #f0dfc3;
+}
+
+body.modo-escuro .imagem-container,
+body.modo-escuro .controle {
+    background-color: #3a2e2a;
+}
+
+body.modo-escuro .linha {
+    background-color: #59433d;
+}
+
+@media (max-width: 750px) {
+    .cabecalho {
+        padding: 18px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cabecalho nav {
+        gap: 20px;
+    }
+
+    .produto-detalhe {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .imagem-container {
+        min-height: 300px;
+    }
+
+    .imagem-container img {
+        max-height: 280px;
+    }
+
+    .informacoes h1 {
+        font-size: 30px;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(25, 13, 16, 0.78);
+    backdrop-filter: blur(8px);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.modal-content {
+    position: relative;
+
+    display: flex;
+
+    width: 780px;
+    max-width: 100%;
+    min-height: 490px;
+
+    background: #FFFDF9;
+
+    border: none;
+    border-radius: 22px;
+    overflow: hidden;
+
+    box-shadow: 0 25px 80px rgba(0,0,0,0.35);
+
+    animation: surgirLogin 0.45s ease;
+}
+
+.cookie-voando {
+    position: fixed;
+    z-index: 99999;
+    pointer-events: none;
+    margin: 0;
+    transition:
+        top 0.75s cubic-bezier(0.45, 0, 0.55, 1),
+        left 0.75s cubic-bezier(0.45, 0, 0.55, 1),
+        width 0.75s ease,
+        height 0.75s ease,
+        opacity 0.75s ease,
+        transform 0.75s ease;
+    object-fit: contain;
+}
+
+#iconeCarrinho.animar-carrinho {
+    animation: destaqueCarrinho 0.5s ease;
+}
+
+@keyframes destaqueCarrinho {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.3) rotate(-10deg);
+    }
+
+    70% {
+        transform: scale(0.9) rotate(10deg);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#iconeCarrinho{
+    text-decoration: none;
+    color:black;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-texto {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f0dfc3;
+    white-space: nowrap;
+    line-height: 1;
+    text-shadow: none;
+}
+
+.logo-cookie {
+    width: 65px;
+    height: 65px;
+}
+
+.logo-cookie img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo span {
+    font-size: 48px;
+    font-family: 'Playfair Display', serif;
+    color: #f0dfc3;
+    font-weight: 700;
+}

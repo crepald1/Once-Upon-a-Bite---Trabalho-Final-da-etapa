@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto | Once Upon a Bite</title>
+    <link rel="stylesheet" href="detalhes.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <a class="logo" href="index.html">
+    <span class="logo-cookie">
+        <img src="images/msbiscuits.png" alt="">
+    </span>
+     
+</a>
+        <a href="carrinho.html" id="iconeCarrinho">
+            🛒
+            <span id="contadorCarrinho">0</span>
+        </a>
+    </header>
+
+    <main class="pagina-detalhes">
+
+        <a href="javascript:history.back()" class="voltar">← Voltar aos produtos</a>
+
+        <section class="produto-detalhe">
+
+            <div class="imagem-container">
+                <img id="produtoImagem" src="" alt="Imagem do produto">
+            </div>
+
+            <div class="informacoes">
+
+                <span class="categoria" id="produtoCategoria">COOKIE ESPECIAL</span>
+
+                <h1 id="produtoNome">Nome do produto</h1>
+
+                <p class="preco" id="produtoPreco">R$ 0,00</p>
+
+                <p class="descricao" id="produtoDescricao">
+                    Descrição do produto.
+                </p>
+
+                <div class="linha"></div>
+
+                <div class="informacao-extra">
+                    <h3>Ingredientes</h3>
+                    <p id="produtoIngredientes">Ingredientes do produto.</p>
+                </div>
+
+                <div class="informacao-extra">
+                    <h3>Informações adicionais</h3>
+                    <p id="produtoInformacoes">Informações sobre o produto.</p>
+                </div>
+
+                <div class="quantidade">
+                    <span>Quantidade:</span>
+
+                    <div class="controle">
+                        <button id="diminuir">−</button>
+                        <span id="quantidade">1</span>
+                        <button id="aumentar">+</button>
+                    </div>
+                </div>
+
+                <button class="botao-carrinho" id="adicionarCarrinho">
+                    Adicionar ao carrinho
+                </button>
+
+                <p class="mensagem" id="mensagem"></p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Once Upon a Bite — Feito com carinho e uma pitada de magia.</p>
+    </footer>
+
+    <script src="detalhes.js"></script>
+</body>
+</html>

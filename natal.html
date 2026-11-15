@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Once Upon a Bite | Cookies que contam histórias</title>
+    <link rel="stylesheet" href="natal.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <script src="natal.js" defer></script>
+
+    <link rel="icon" href="images/msbiscuits-favicon.png">
+</head>
+
+<body>
+
+    <div id="mascote">
+        <div class="balao-oi">Oi! Clica em mim</div>
+        <img src="images/natalmsbiscuit.png" alt="Cookie">
+    </div>
+
+    <div id="chat">
+
+        <div class="topo">
+            <img src="images/natalmsbiscuit.png" alt="Cookie">
+
+            <div class="nome">
+                <strong>Cookie</strong>
+                <span>online agora</span>
+            </div>
+
+            <button id="fechar" type="button">✕</button>
+        </div>
+
+        <div id="mensagens"></div>
+
+        <div class="rodape">
+            <input id="texto" type="text" placeholder="Escreve sua pergunta...">
+            <button id="enviar" type="button">➤</button>
+        </div>
+
+    </div>
+
+    <div class="intro-natal" id="intro-natal" aria-label="Abertura de Natal">
+
+        <div class="intro-raios" aria-hidden="true"></div>
+
+        <video
+            class="intro-cookie"
+            id="intro-cookie"
+            src="images/cookie-natal.mp4"
+            autoplay
+            playsinline
+            preload="auto"
+            aria-label="Animação especial de Natal com um biscoito">
+        </video>
+
+        <button class="intro-pular" id="intro-pular" type="button">
+            Pular introdução ✕
+        </button>
+
+    </div>
+
+    <header class="cabecalho">
+
+        <a class="logo" href="#inicio">
+
+            <span class="logo-cookie">
+                <img src="images/natalmsbiscuit.png" alt="">
+            </span>
+
+            <span>
+                Once Upon
+                <small>a Bite</small>
+            </span>
+
+        </a>
+
+        <nav class="menu">
+
+            <a href="index.html">Início</a>
+
+            <div class="feriados">
+
+                <p class="header-active">Feriados</p>
+
+                <ul class="dropdown-feriados">
+
+                    <li>
+                        <a href="halloween.html">Halloween</a>
+                    </li>
+
+                    <li>
+                        <a class="header-active" href="natal.html">Natal</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <a href="tematicos.html">Temáticos</a>
+
+            <a href="carrinho.html" id="iconeCarrinho">
+                🛒
+                <span id="contadorCarrinho">0</span>
+            </a>
+
+
+            <div class="pesquisa">
+
+                <input
+                    type="search"
+                    id="campoPesquisa"
+                    list="lista-cookies"
+                    placeholder="Buscar cookie..."
+                    autocomplete="off"
+                >
+
+                <datalist id="lista-cookies">
+                    <option value="Papai Cruel">
+                    <option value="Poção Proibida">
+                    <option value="Maldição da abóbora">
+                    <option value="Jason Voorhees">
+                    <option value="Mordida Proibida">
+                    <option value="Ossos do Ofício">
+                    <option value="Frankestein">
+                    <option value="Gato Preto">
+                    <option value="Dark Side">
+                    <option value="Pink Dream">
+                    <option value="Floresta Mágica">
+                    <option value="I AM IRON MAN">
+                    <option value="Velociraptor">
+                    <option value="Amor Encantado">
+                    <option value="HEHE">
+                    <option value="SuperSonic">
+                    <option value="Intergalático">
+                    <option value="Troca Equivalente">
+                    <option value="Aquele em que Mônica">
+                    <option value="O Roubo">
+                    <option value="Gingerbread">
+                    <option value="Hello Kitty Natalina">
+                    <option value="Grinch">
+                    <option value="HOHOHO">
+                    <option value="Let it go">
+                    <option value="Presentes">
+                    <option value="Rudolph">
+                    <option value="Mamãe Noel">
+
+                </datalist>
+
+                <button type="button" onclick="abrirPesquisa()" aria-label="Pesquisar">
+                    <img src="images/lupa.png" alt="">
+                </button>
+
+            </div>
+
+            <button type="button" class="botao-abrir-login" onclick="abrirLogin()">Login</button>
+
+            <div id="id01" class="modal">
+
+                <div class="modal-content">
+
+                    <button type="button" class="close" onclick="fecharLogin()">&times;</button>
+
+                    <div class="login-decoracao">
+
+                        <img src="images/msbiscuits.png" alt="Cookie">
+
+                        <span class="login-detalhe">✦ UMA EXPERIÊNCIA ESPECIAL ✦</span>
+
+                        <h2>Once Upon<br>a Bite</h2>
+
+                        <p>Toda grande história começa com uma mordida. Que tal continuar a sua?</p>
+
+                        <span class="login-estrela">✧</span>
+
+                    </div>
+
+                    <div class="login-formulario">
+
+                        <span class="login-boasvindas">É BOM TER VOCÊ AQUI!</span>
+
+                        <h2>Bem-vindo!</h2>
+
+                        <p class="subtitulo">
+                            Entre na sua conta e descubra seu próximo sabor favorito.
+                        </p>
+
+                        <form id="formLogin">
+
+                            <label for="uname">E-mail</label>
+
+                            <input
+                                type="email"
+                                id="uname"
+                                name="email"
+                                placeholder="Digite seu e-mail"
+                                required
+                            >
+
+                            <label for="psw">Senha</label>
+
+                            <input
+                                type="password"
+                                id="psw"
+                                name="senha"
+                                placeholder="Digite sua senha"
+                                required
+                            >
+
+                            <div class="login-opcoes">
+
+                                <label class="lembrar">
+                                    <input type="checkbox" name="remember">
+                                    Lembrar de mim
+                                </label>
+
+                                <a href="#">Esqueceu a senha?</a>
+
+                            </div>
+
+                            <button type="submit" class="botao-login">
+                                Entrar na minha conta <span>→</span>
+                            </button>
+
+                        </form>
+
+                        <p class="login-cadastro">
+                            Ainda não tem uma conta?
+                            <a href="#">Cadastre-se</a>
+                        </p>
+
+                        <div class="login-rodape">
+                            ✦ EVERY BITE TELLS A STORY ✦
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <label class="switch">
+                <input type="checkbox" id="botao-mode">
+                <span class="slider"></span>
+            </label>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="destaque" id="inicio">
+
+            <div class="destaque-texto">
+
+                <p class="sobretitulo">
+                    EDIÇÃO ESPECIAL • NOVEMBRO E DEZEMBRO
+                </p>
+
+                <h1>
+                    Um Natal<br>
+                    de dar água na boca.
+                </h1>
+
+                <p class="descricao">
+                    Cookies feitos pra ser um presente pra você, momentos especiais com quem você ama, ou até mesmo pra se deliciar sozinho.
+                    Descubra os sabores especiais que preparamos para essa temporada.
+                </p>
+
+            </div>
+
+            <div class="destaque-foto">
+
+                <div class="foto-placeholder natal-foto">
+
+                    <img
+                        src="images/natalpag1.png"
+                        alt="Cookies especiais de Natal">
+
+                </div>
+
+                <span class="selo">
+                    EDIÇÃO<br>
+                    LIMITADA
+                </span>
+
+            </div>
+
+        </section>
+
+        <section class="secao produtos" id="tematicos">
+
+            <div class="titulo-secao">
+
+                <div>
+
+                    <p class="sobretitulo">
+                        ESCOLHA SEU UNIVERSO
+                    </p>
+
+                    <h2>
+                        Cookies que o papai noel iria aprovar
+                    </h2>
+
+                </div>
+
+                <p class="texto-apoio">
+                    Qual presente você vai escolher para se deliciar ou presentear alguém especial? Confira os cookies que preparamos para essa temporada de festas.
+                </p>
+
+            </div>
+
+            <div class="grade-produtos" id="produtos">
+
+                <article class="produto">
+
+                    <div class="foto-placeholder foto-produto">
+
+                        <img
+                            src="images/cok.png"
+                            alt="Gingerbread"
+                            class="imagem-detalhes"
+                            onclick="abrirDetalhes(this)"
+                            data-id="9"
+                            data-nome="Gingerbread"
+                            data-preco="8.00"
+                            data-imagem="images/cok.png"
+                            data-descricao="Marcante, doce e picante, caracterizado pela combinação de melaço de cana com um mix de especiarias quentes."
+                            data-ingredientes="Melaço de cana e especiarias."
+                            data-informacoes="Cookie especial da edição de Natal."
+                            data-categoria="NATAL"
+                        >
+
+                    </div>
+
+                    <div class="produto-info">
+
+                        <p class="categoria">NATAL</p>
+
+                        <h3>Gingerbread</h3>
+
+                        <p>
+                            Marcante, doce e picante, caracterizado pela combinação de melaço de cana com um mix de especiarias quentes.
+                        </p>
+
+                        <div class="produto-final">
+                            <strong>R$ 8,00</strong>
+                            <button type="button" class="adicionar-carrinho" aria-label="Adicionar Gingerbread ao carrinho">+</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="produto">
+
+                    <div class="foto-placeholder foto-produto">
+
+                        <img
+                            src="images/cok (1).png"
+                            alt="Hello Kitty Natalina"
+                            class="imagem-detalhes"
+                            onclick="abrirDetalhes(this)"
+                            data-id="10"
+                            data-nome="Hello Kitty Natalina"
+                            data-preco="8.50"
+                            data-imagem="images/cok (1).png"
+                            data-descricao="Cookie de morango com recheio de chocolate branco."
+                            data-ingredientes="Morango e chocolate branco."
+                            data-informacoes="Cookie especial da edição de Natal."
+                            data-categoria="NATAL"
+                        >
+
+                    </div>
+
+                    <div class="produto-info">
+
+                        <p class="categoria">NATAL</p>
+
+                        <h3>Hello Kitty Natalina</h3>
+
+                        <p>
+                            Cookie de morango com recheio de chocolate branco
+                        </p>
+
+                        <div class="produto-final">
+                            <strong>R$ 8,50</strong>
+                            <button type="button" class="adicionar-carrinho" aria-label="Adicionar Hello Kitty Natalina ao carrinho">+</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="produto">
+
+                    <div class="foto-placeholder foto-produto">
+
+                        <img
+                            src="images/cok (2).png"
+                            alt="Grinch"
+                            class="imagem-detalhes"
+                            onclick="abrirDetalhes(this)"
+                            data-id="11"
+                            data-nome="Grinch"
+                            data-preco="9.00"
+                            data-imagem="images/cok (2).png"
+                            data-descricao="Cookie de pistache com frutas vermelhas."
+                            data-ingredientes="Pistache e frutas vermelhas."
+                            data-informacoes="Cookie especial da edição de Natal."
+                            data-categoria="NATAL"
+                        >
+
+                    </div>
+
+                    <div class="produto-info">
+
+                        <p class="categoria">NATAL</p>
+
+                        <h3>Grinch</h3>
+
+                        <p>
+                            Cookie de pistache com frutas vermelhas
+                        </p>
+
+                        <div class="produto-final">
+                            <strong>R$ 9,00</strong>
+                            <button type="button" class="adicionar-carrinho" aria-label="Adicionar Grinch ao carrinho">+</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="produto">
+
+                    <div class="foto-placeholder foto-produto">
+
+                        <img
+                            src="images/cok (3).png"
+                            alt="HOHOHO"
+                            class="imagem-detalhes"
+                            onclick="abrirDetalhes(this)"
+                            data-id="12"
+                            data-nome="HOHOHO"
+                            data-preco="7.00"
+                            data-imagem="images/cok (3).png"
+                            data-descricao="Cookie de panetone recheado com frutas caramelizadas."
+                            data-ingredientes="Massa sabor panetone e frutas caramelizadas."
+                            data-informacoes="Cookie especial da edição de Natal."
+                            data-categoria="NATAL"
+                        >
+
+                    </div>
+
+                    <div class="produto-info">
+
+                        <p class="categoria">NATAL</p>
+
+                        <h3>HOHOHO</h3>
+
+                        <p>
+                            Cookie de panetone recheado com frutas caramelizadas
+                        </p>
+
+                        <div class="produto-final">
+                            <strong>R$ 7,00</strong>
+                            <button type="button" class="adicionar-carrinho" aria-label="Adicionar HOHOHO ao carrinho">+</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="secao produtos" id="tematicos-2">
+
+            <div class="grade-produtos" id="produtos-2">
+
+                <article class="produto">
+
+                    <div class="foto-placeholder foto-produto">
+
+                        <img
+                            src="images/cok (4).png"
+                            alt="Let it go"
+                            class="imagem-detalhes"
+                            onclick="abrirDetalhes(this)"
+                            data-id="13"
+                            data-nome="Let it go"
+                            data-preco="8.00"
+                            data-imagem="images/cok (4).png"
+                            data-descricao="Cookie de baunilha recheado de groselha."
+                            data-ingredientes="Baunilha e groselha."
+                            data-informacoes="Cookie especial da edição de Natal."
+                            data-categoria="NATAL"
+                        >
+
+                    </div>
+
+                    <div class="produto-info">
+
+                        <p class="categoria">NATAL</p>
+
+                        <h3>Let it go</h3>
+
+                        <p>
+                            Cookie de baunilha recheado de groselha
+                        </p>
+
+                        <div class="produto-final">
+                            <strong>R$ 8,00</strong>
+                            <button type="button" class="adicionar-carrinho" aria-label="Adicionar Let it go ao carrinho">+</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="produto">
+
+                    <div class="foto-placeholder foto-produto">
+
+                        <img
+                            src="images/cok (5).png"
+                            alt="Presentes"
+                            class="imagem-detalhes"
+                            onclick="abrirDetalhes(this)"
+                            data-id="14"
+                            data-nome="Presentes"
+                            data-preco="8.50"
+                            data-imagem="images/cok (5).png"
+                            data-descricao="Cookie de menta com recheio de chocolate."
+                            data-ingredientes="Menta e chocolate."
+                            data-informacoes="Cookie especial da edição de Natal."
+                            data-categoria="NATAL"
+                        >
+
+                    </div>
+
+                    <div class="produto-info">
+
+                        <p class="categoria">NATAL</p>
+
+                        <h3>Presentes</h3>
+
+                        <p>
+                            Cookie de menta com recheio de chocolate
+                        </p>
+
+                        <div class="produto-final">
+                            <strong>R$ 8,50</strong>
+                            <button type="button" class="adicionar-carrinho" aria-label="Adicionar Presentes ao carrinho">+</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="produto">
+
+                    <div class="foto-placeholder foto-produto">
+
+                        <img
+                            src="images/cok (6).png"
+                            alt="Rudolph"
+                            class="imagem-detalhes"
+                            onclick="abrirDetalhes(this)"
+                            data-id="15"
+                            data-nome="Rudolph"
+                            data-preco="9.00"
+                            data-imagem="images/cok (6).png"
+                            data-descricao="Cookie de chocolate com recheio de caramelo."
+                            data-ingredientes="Chocolate e caramelo."
+                            data-informacoes="Cookie especial da edição de Natal."
+                            data-categoria="NATAL"
+                        >
+
+                    </div>
+
+                    <div class="produto-info">
+
+                        <p class="categoria">NATAL</p>
+
+                        <h3>Rudolph</h3>
+
+                        <p>
+                            Cookie de chocolate com recheio de caramelo
+                        </p>
+
+                        <div class="produto-final">
+                            <strong>R$ 9,00</strong>
+                            <button type="button" class="adicionar-carrinho" aria-label="Adicionar Rudolph ao carrinho">+</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="produto">
+
+                    <div class="foto-placeholder foto-produto">
+
+                        <img
+                            src="images/cok (7).png"
+                            alt="Mamãe Noel"
+                            class="imagem-detalhes"
+                            onclick="abrirDetalhes(this)"
+                            data-id="16"
+                            data-nome="Mamãe Noel"
+                            data-preco="7.00"
+                            data-imagem="images/cok (7).png"
+                            data-descricao="Cookie de uvas passas com recheio de chocolate ao leite."
+                            data-ingredientes="Uvas passas e chocolate ao leite."
+                            data-informacoes="Cookie especial da edição de Natal."
+                            data-categoria="NATAL"
+                        >
+
+                    </div>
+
+                    <div class="produto-info">
+
+                        <p class="categoria">NATAL</p>
+
+                        <h3>Mamãe Noel</h3>
+
+                        <p>
+                            Cookie de uvas passas com recheio de chocolate ao leite
+                        </p>
+
+                        <div class="produto-final">
+                            <strong>R$ 7,00</strong>
+                            <button type="button" class="adicionar-carrinho" aria-label="Adicionar Mamãe Noel ao carrinho">+</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="convite" id="carrinho">
+
+            <div>
+
+                <p class="sobretitulo">
+                    SUA PRÓXIMA HISTÓRIA COMEÇA AQUI
+                </p>
+
+                <h2>
+                    Qual vai ser a sua próxima mordida?
+                </h2>
+
+                <p>
+                    Escolha seus favoritos e monte sua caixinha de cookies.
+                </p>
+
+            </div>
+
+            <a class="botao botao-claro" href="carrinho.html">
+                Explorar os cookies <span>→</span>
+            </a>
+
+        </section>
+
+        <section class="secao contato" id="formulario">
+
+            <div class="titulo-secao">
+
+                <div>
+
+                    <p class="sobretitulo">
+                        VAMOS CONVERSAR?
+                    </p>
+
+                    <h2>Fale conosco!</h2>
+
+                </div>
+
+            </div>
+
+            <form class="form-contato">
+
+                <label for="nome">Seu nome</label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Como podemos te chamar?">
+
+                <label for="email">Seu e-mail</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="voce@email.com">
+
+                <label for="mensagem">Mensagem</label>
+
+                <textarea
+                    id="mensagem"
+                    name="mensagem"
+                    rows="4"
+                    placeholder="Escreva sua dúvida ou sugestão..."></textarea>
+
+                <button class="botao" type="submit">
+                    Enviar mensagem <span>→</span>
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+
+        <a class="logo logo-rodape" href="#inicio">
+            ✦ Once Upon a Bite
+        </a>
+
+        <p>Every bite tells a story.</p>
+
+        <small>
+            © 2026 Once Upon a Bite • Feito com carinho.
+        </small>
+
+    </footer>
+
+</body>
+</html>
